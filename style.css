@@ -56,9 +56,9 @@ a {
   overflow: auto;
 }
 
-.todo__app--list li {
+/* .todo__app--list li {
   list-style-type: lower-greek-roman;
-}
+} */
 #snackbar {
   visibility: hidden;
   min-width: 250px;
