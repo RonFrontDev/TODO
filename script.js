@@ -2,6 +2,8 @@ const inputfield = document.querySelector('.todo__app--input');
 const addbutton = document.querySelector('.todo__app--addbutton');
 const clearbutton = document.querySelector('.todo__app--clearbutton');
 const taskList = document.querySelector('.todo__app--list');
+const deleteBtn = document.querySelector('deletebutton');
+const taskItemselected = document.querySelector('todo__app--item');
 
 let tasks = [];
 inputfield.addEventListener('keypress', function (event) {
@@ -12,6 +14,7 @@ inputfield.addEventListener('keypress', function (event) {
 });
 addbutton.addEventListener('click', addTask);
 clearbutton.addEventListener('click', clearTasks);
+taskItemselected.addEventListener('click', completedTask);
 
 function addTask() {
   const taskText = inputfield.value.trim();
@@ -34,12 +37,16 @@ function addTask() {
   }
 }
 
+function completedTask() {
+  taskItemselected.classList.add('completed');
+}
+
 function renderTask() {
   taskList.innerHTML = '';
 
   tasks.forEach((task) => {
     const taskItem = document.createElement('li');
-
+    taskItem.classList.add('todo__app--item');
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.addEventListener('click', () => removeTask(task.id));
@@ -52,6 +59,8 @@ function renderTask() {
     // console.log(taskItem);
   });
 }
+
+function deleteTask() {}
 
 function toggleTaskCompletion(taskId) {
   const task = tasks.find((task) => task.id === taskId);
@@ -83,9 +92,12 @@ function showSnackBar() {
     snackbar.className = snackbar.className.replace('show', '');
   }, 3000);
 }
+function clearLocalStorage() {
+  localStorage.removeItem('tasks');
+}
 
 function clearTasks() {
   tasks = [];
-  saveTaskToLocalStorage();
+  clearLocalStorage();
   renderTask();
 }
