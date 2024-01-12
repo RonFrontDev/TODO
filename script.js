@@ -13,7 +13,7 @@ button.addEventListener('click', addTask);
 
 function addTask() {
   const taskText = inputfield.value.trim();
-  console.log(taskText);
+  //   console.log(taskText);
   if (taskText !== '') {
     const task = {
       id: Date.now(),
@@ -21,7 +21,7 @@ function addTask() {
       completed: false,
     };
     tasks.push(task);
-    console.log(tasks);
+    // console.log(tasks);
     saveTaskToLocalStorage();
 
     renderTask();
@@ -47,7 +47,7 @@ function renderTask() {
     }
 
     taskList.appendChild(taskItem);
-    console.log(taskItem);
+    // console.log(taskItem);
   });
 }
 
