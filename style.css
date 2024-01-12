@@ -70,7 +70,7 @@ a {
   padding: 10px;
   /* border: 3px dotted gold; */
   list-style-position: inside;
-  list-style-type: upper-greek;
+  list-style-type: decimal;
 }
 #snackbar {
   visibility: hidden;
