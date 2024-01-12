@@ -1,5 +1,6 @@
 const inputfield = document.querySelector('.todo__app--input');
-const button = document.querySelector('.todo__app--button');
+const addbutton = document.querySelector('.todo__app--addbutton');
+const clearbutton = document.querySelector('.todo__app--clearbutton');
 const taskList = document.querySelector('.todo__app--list');
 
 let tasks = [];
@@ -9,7 +10,8 @@ inputfield.addEventListener('keypress', function (event) {
     addTask();
   }
 });
-button.addEventListener('click', addTask);
+addbutton.addEventListener('click', addTask);
+clearbutton.addEventListener('click', clearTasks);
 
 function addTask() {
   const taskText = inputfield.value.trim();
@@ -80,4 +82,10 @@ function showSnackBar() {
   setTimeout(() => {
     snackbar.className = snackbar.className.replace('show', '');
   }, 3000);
+}
+
+function clearTasks() {
+  tasks = [];
+  saveTaskToLocalStorage();
+  renderTask();
 }

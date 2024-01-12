@@ -9,6 +9,12 @@ body {
   background-color: black;
   color: white;
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* border: 3px red solid; */
 }
 
 a {
@@ -17,37 +23,41 @@ a {
 }
 
 .todo__app {
-  padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 30px;
   width: 100%;
-  height: 100%;
+  max-width: 600px;
+  /* height: 500px; */
   gap: 10px;
   border: 3px red solid;
+  border-radius: 30px;
 }
 .todo__app--input {
   height: 40px;
   width: 200px;
   text-align: center;
 }
-.todo__app--button {
+.todo__app--addbutton {
+  height: 40px;
+  width: 200px;
+}
+.todo__app--clearbutton {
   height: 40px;
   width: 200px;
 }
 .todo__app--list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  justify-items: center;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   padding: 10px;
   width: 100%;
   height: 100%;
   margin-top: 30px;
-  max-width: 100%;
-  min-width: 200px;
+  max-width: 600px;
+  min-width: 300px;
   max-height: 100%;
   min-height: 100px;
   border-radius: 30px;
@@ -56,9 +66,12 @@ a {
   overflow: auto;
 }
 
-/* .todo__app--list li {
-  list-style-type: lower-greek-roman;
-} */
+.todo__app--list li {
+  padding: 10px;
+  /* border: 3px dotted gold; */
+  list-style-position: inside;
+  list-style-type: upper-greek;
+}
 #snackbar {
   visibility: hidden;
   min-width: 250px;
