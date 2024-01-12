@@ -75,7 +75,7 @@ function getTaskFromLocalStorage() {
 getTaskFromLocalStorage();
 
 function showSnackBar() {
-  let snackbar = document.getElementById('snackbar');
+  const snackbar = document.getElementById('snackbar');
   snackbar.className = 'show';
   setTimeout(() => {
     snackbar.className = snackbar.className.replace('show', '');

@@ -56,10 +56,9 @@ a {
   overflow: auto;
 }
 
-li {
+.todo__app--list li {
   list-style-type: lower-greek-roman;
 }
-
 #snackbar {
   visibility: hidden;
   min-width: 250px;
@@ -80,6 +79,7 @@ li {
   visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation-fill-mode: both;
 }
 
 @-webkit-keyframes fadein {
