@@ -35,18 +35,26 @@ a {
   border-radius: 30px;
 }
 .todo__app--input {
+  margin-top: 10px;
   height: 40px;
   width: 200px;
   text-align: center;
+  border-radius: 30px;
+}
+.todo__app--buttonbox {
+  display: flex;
 }
 .todo__app--addbutton {
   height: 40px;
   width: 200px;
+  border-radius: 30px;
 }
 .todo__app--clearbutton {
   height: 40px;
   width: 200px;
+  border-radius: 30px;
 }
+
 .todo__app--list {
   display: grid;
   text-align: center;
