@@ -22,7 +22,7 @@ function addTask() {
     };
     tasks.push(task);
     console.log(tasks);
-    // saveTaskToLocalStorage();
+    saveTaskToLocalStorage();
 
     renderTask();
 
