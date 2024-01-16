@@ -62,27 +62,53 @@ a {
 .todo__app--list {
   display: grid;
   text-align: center;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 10px;
+  grid-template-columns: repeat(1, 1fr);
   width: 100%;
   height: 100%;
-  margin-top: 30px;
   max-width: 600px;
   min-width: 300px;
   max-height: 100%;
-  min-height: 100px;
+  min-height: 30px;
   border-radius: 30px;
   border: 3px solid red;
   flex: 1;
   overflow: auto;
 }
 
-.todo__app--list li {
-  padding: 10px;
-  border: 3px dotted gold;
+.todo__app--item {
+  background-color: rgb(52, 118, 138);
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px; */
+  height: 40px;
+  font-size: 1.4rem;
+  /* border-bottom: 1px solid red; */
   list-style-position: inside;
   list-style-type: decimal;
+}
+.todo__app--item:hover {
+  background-color: rgb(166, 166, 166);
+}
+.todo__app--deleteBtn {
+  background: none;
+  border: none;
+  font-size: 40px;
+}
+.todo__app--deleteBtn:hover {
+  color: white;
+}
+
+.select-option {
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: red;
 }
 #snackbar {
   visibility: hidden;
