@@ -14,7 +14,7 @@ inputfield.addEventListener('keypress', function (event) {
 });
 addbutton.addEventListener('click', addTask);
 clearbutton.addEventListener('click', clearTasks);
-taskItemselected.addEventListener('click', completedTask);
+// taskItemselected.addEventListener('click', completedTask);
 
 function addTask() {
   const taskText = inputfield.value.trim();
