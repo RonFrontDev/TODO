@@ -52,6 +52,16 @@ function renderTask() {
 
     const taskText = document.createElement('p'); // Creating a p tag for text
     taskText.textContent = task.text;
+    taskText.setAttribute('contentEditable', true);
+    taskText.addEventListener('blur', () =>
+      editTask(task.id, taskText.textContent.trim())
+    );
+    taskText.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        taskText.blur(); // Trigger blur event to save changes
+      }
+    });
 
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('todo__app--deleteBtn');
@@ -70,7 +80,7 @@ function renderTask() {
     taskList.appendChild(taskItem);
 
     if (task.completed) {
-      completedTask(taskText);
+      completedTask(taskItem);
     }
   });
 }
@@ -86,6 +96,15 @@ function removeTask(taskId) {
   tasks = tasks.filter((task) => task.id !== taskId);
   saveTaskToLocalStorage();
   renderTask();
+}
+
+function editTask(taskId, newText) {
+  const task = tasks.find((task) => task.id === taskId);
+  if (newText !== '') {
+    task.text = newText;
+    saveTaskToLocalStorage();
+    renderTask();
+  }
 }
 
 function saveTaskToLocalStorage() {
